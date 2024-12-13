@@ -5,12 +5,12 @@ import morgan from "morgan";
 import axios from "axios";
 const app = new express();
 
-app.use(
-    cors({
-        origin: process.env.CORS_ORIGIN,
-        credentials: true,
-    })
-);
+// app.use(
+//     cors({
+//         origin: process.env.CORS_ORIGIN,
+//         credentials: true,
+//     })
+// );
 
 const config = {
     headers: {
@@ -21,7 +21,7 @@ const config = {
   
 //   const cors = require('cors');
 const corsOptions ={
-    origin:'video-tube-frontend-code.vercel.app', 
+    origin:'https://video-tube-backend-code.vercel.app/', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -29,7 +29,7 @@ const corsOptions ={
 app.use(cors(corsOptions));
   const {
     data: { ip }
-  } = await axios.get("video-tube-frontend-code.vercel.app", config);
+  } = await axios.get("https://video-tube-backend-code.vercel.app/", config);
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
