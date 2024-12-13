@@ -21,7 +21,7 @@ const config = {
   
 //   const cors = require('cors');
 const corsOptions ={
-    origin:'http://localhost:5173', 
+    origin:'video-tube-frontend-code.vercel.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -29,7 +29,7 @@ const corsOptions ={
 app.use(cors(corsOptions));
   const {
     data: { ip }
-  } = await axios.get("http://localhost:5173", config);
+  } = await axios.get("video-tube-frontend-code.vercel.app", config);
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
