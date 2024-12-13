@@ -5,12 +5,12 @@ import morgan from "morgan";
 import axios from "axios";
 const app = new express();
 
-// app.use(
-//     cors({
-//         origin: process.env.CORS_ORIGIN,
-//         credentials: true,
-//     })
-// );
+app.use(
+    cors({
+        origin: process.env.CORS_ORIGIN,
+        credentials: true,
+    })
+);
 
 const config = {
     headers: {
